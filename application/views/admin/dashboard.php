@@ -68,7 +68,7 @@
 							<div class="panel-body">
 								<ul class="nav navbar-nav">
 									<li><a href="<?=base_url()?>admin/admission">Admission</a></li>
-									<li><a href="#">Link</a></li>
+									<li><a href="<?=base_url()?>admin/add_staff">Add Staffs</a></li>
 									<li><a href="#">Link</a></li>
 
 									<!-- Dropdown level 2 -->
@@ -113,11 +113,22 @@
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. -->
 	   
 	   <?php
-	   if(isset($test)){
-	   	if($test==true){
+	   if(isset($admission_form)){
+	   	if($admission_form==true){
 	   	 $this->load->view('admin/admission');	
 	   	}
 	   } 
+
+	   if(isset($add_staff_form)){
+	   	if($add_staff_form==true){
+	   	 $this->load->view('admin/add_staff');	
+	   	}
+	   }
+	   if(isset($staff_ok)){
+	   	if($staff_ok==true){
+	   	 echo "<p>New staff added successfully</p>";	
+	   	}
+	   }  
 	    
 	   ?>
 	</div>

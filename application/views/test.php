@@ -1,99 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
+<form class="form-horizontal">
+<fieldset>
 
-<head>
+<!-- Form Name -->
+<legend>Add staff</legend>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Text Input</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+  <span class="help-block">help</span>  
+  </div>
+</div>
 
-    <title>Home</title>
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="passwordinput">Password Input</label>
+  <div class="col-md-4">
+    <input id="passwordinput" name="passwordinput" type="password" placeholder="placeholder" class="form-control input-md">
+    <span class="help-block">help</span>
+  </div>
+</div>
 
-    <!-- Bootstrap Core CSS -->
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Select Basic</label>
+  <div class="col-md-4">
+    <select id="selectbasic" name="selectbasic" class="form-control">
+      <option value="1">Option one</option>
+      <option value="2">Option two</option>
+    </select>
+  </div>
+</div>
 
-    
-    <link href="<?=base_url()?>assets/css/bootstrap.min.css" rel="stylesheet">  
-  
-    <!-- Custom CSS -->
-    <link href="<?=base_url()?>assets/css/full-slider.css" rel="stylesheet">
-    <link href="<?=base_url()?>assets/css/dashboard.css" rel="stylesheet">
-    <link href="<?=base_url()?>assets/css/custom.css" rel="stylesheet">
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="passwordinput">Password Input</label>
+  <div class="col-md-4">
+    <input id="passwordinput" name="passwordinput" type="password" placeholder="placeholder" class="form-control input-md">
+    <span class="help-block">help</span>
+  </div>
+</div>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<!-- Button (Double) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="button1id">Double Button</label>
+  <div class="col-md-8">
+    <button id="button1id" name="button1id" class="btn btn-success">Good Button</button>
+    <button id="button2id" name="button2id" class="btn btn-danger">Scary Button</button>
+  </div>
+</div>
 
-</head>
-
-<body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="<?=base_url()?>home/">SCHOOL</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                    
-                </ul>
-                <!-- test-->
-                  <ul class="nav navbar-nav navbar-right">
-       <!--  <li><a href="#">Link</a></li> -->
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          
-         <?php
-          //$user_type=$this->session->userdata('user_type');
-          //if($user_type == 'admin'){
-            //echo "Admin"; 
-          //}
-         ?>
-          Options
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="<?=base_url()?>users/login">Login</a></li>
-            <li><a href="<?=base_url()?>users/signup">SignUp</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>   
-                <!-- test-->
-
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-   
-    <!-- Page Content -->
-   <!--  <div class="container">
- -->
-     
-
-    
+</fieldset>
+</form>

@@ -12,7 +12,15 @@ class User_model extends CI_Model
 	}
 
 	function create_user($data){
-	 $this->db->insert('users',$data);	
+	 $this->db->insert('users',$data);
+	 $inser_id=$this->db->insert_id();
+	 return $inser_id;	
+	}
+
+	function create_staff($data){
+	 $this->db->insert('staff',$data);
+	 $inser_id=$this->db->insert_id();
+	 return $inser_id;	
 	}
 
 	function find_all(){
@@ -40,5 +48,7 @@ class User_model extends CI_Model
 	function logout(){
 	 	
 	}
+
+	
 }
 ?>
