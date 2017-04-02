@@ -14,5 +14,11 @@ class Test extends CI_Controller {
   $this->load->view('admin/header');
   $this->load->view('test');
   $this->load->view('admin/footer');	
+ }
+
+ function users(){
+  $this->load->model('teacher_model');
+  $data['row']=$this->teacher_model->getUser(2);
+ $this->load->view('test',$data);	
  }	
 }

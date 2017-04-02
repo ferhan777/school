@@ -38,7 +38,7 @@ class User_model extends CI_Model
 	function login($username,$password){
 	 $where=array(
 	  'username' => $username,
-	  'password' => sha1($password)  
+	  'password' => $password  
 	  );	
 	 $this->db->select('*')->from('users')->where($where);
 	 $query=$this->db->get();

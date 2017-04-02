@@ -14,8 +14,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  	}
 
    function auth(){ //this function prevent direct access to admin controller
-   $user_type=$this->session->userdata('user_type');
-   if(!$user_type =='admin'){
+   $user_type=$_SESSION['user_type'];
+   if($user_type !='admin'){
    redirect(base_url().'users/login');
    }  
   }
@@ -29,12 +29,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
  	function admission(){
  	 $data['admission_form']=true;	
-     $this->load->view('admin/admin_header');
+     $this->load->view('admin/admin_header'); //need to create a admin_model
      $this->load->view('admin/dashboard',$data);
      $this->load->view('admin/admin_footer');
  	}
 
- 	function add_staff(){
+ 	function add_staff(){ //this is done via user_model
      $data['error']=false;
      $data['add_staff_form']=true;
      $this->form_validation->set_rules('employ_code','Employee code','trim|required|min_length[4]|max_length[8]');
@@ -88,5 +88,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }//form validation success block
 
  	}//closing of the function
+
+  
  }//class ends here
 ?>

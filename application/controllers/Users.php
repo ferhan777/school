@@ -14,8 +14,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  	function login(){
     $data['error']=false;
     $this->form_validation->set_rules('username','Username','trim|required|min_length[5]|max_length[8]');
-   $this->form_validation->set_rules('password','Password','trim|required|min_length[5]|max_length[8]');
-   $this->form_validation->set_error_delimiters('<div class="vali_error">', '</div>'); 
+    $this->form_validation->set_rules('password','Password','trim|required|min_length[5]|max_length[8]');
+    $this->form_validation->set_error_delimiters('<div class="vali_error">', '</div>'); 
    
    if($this->form_validation->run()==false){
       //$error=validation_error();
@@ -36,8 +36,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }else{//if user is found in the database
 
           $this->session->set_userdata('id',$user['id']);
+          $this->session->set_userdata('username',$user['username']);
           $this->session->set_userdata('user_type',$user['user_type']);
-          redirect(base_url().'admin');
+          if($user['user_type']=='admin'){
+           redirect(base_url().'admin');
+          }else if($user['user_type']=='pteacher'){
+           redirect(base_url().'teachers'); 
+          }
         } 
       }else{//if post failes due to some reasons
         $data['error']=true;

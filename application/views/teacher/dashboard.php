@@ -13,7 +13,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="#">
-				Administrator
+				Teacher's Dashboard 
 			</a>
 		</div>
 
@@ -54,7 +54,7 @@
 			<!-- Main Menu -->
 			<div class="side-menu-container">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="<?=base_url()?>admin/"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+					<li class="active"><a href="#"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-plane"></span> Active Link</a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-cloud"></span> Link</a></li>
 
@@ -68,8 +68,8 @@
 						<div id="dropdown-lvl1" class="panel-collapse collapse">
 							<div class="panel-body">
 								<ul class="nav navbar-nav">
-									<li><a href="<?=base_url()?>admin/admission">Admission</a></li>
-									<li><a href="<?=base_url()?>admin/add_staff">Add Staffs</a></li>
+									<li><a href="<?=base_url()?>teachers/view_profile">Update Profile</a></li>
+									<li><a href="#"></a></li>
 									<li><a href="#">Link</a></li>
 
 									<!-- Dropdown level 2 -->
@@ -114,22 +114,12 @@
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. -->
 	   
 	   <?php
-	   if(isset($admission_form)){
-	   	if($admission_form==true){
-	   	 $this->load->view('admin/admission');	
+	    
+	   if(isset($update_profile_form)){
+	   	if($update_profile_form==true){
+	   	 $this->load->view('teacher/update_profile');	
 	   	}
 	   } 
-
-	   if(isset($add_staff_form)){
-	   	if($add_staff_form==true){
-	   	 $this->load->view('admin/add_staff');	
-	   	}
-	   }
-	   if(isset($staff_ok)){
-	   	if($staff_ok==true){
-	   	 echo "<p>New staff added successfully</p>";	
-	   	}
-	   }  
 	    
 	   ?>
 	</div>
