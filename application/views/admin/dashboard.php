@@ -12,7 +12,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">
+			<a class="navbar-brand" href="<?=base_url();?>admin/">
 				Administrator
 			</a>
 		</div>
@@ -69,7 +69,7 @@
 							<div class="panel-body">
 								<ul class="nav navbar-nav">
 									<li><a href="<?=base_url()?>admin/admission">Admission</a></li>
-									<li><a href="<?=base_url()?>admin/add_staff">Add Staffs</a></li>
+									<li><a href="<?=base_url()?>admin/view_staff">Staffs</a></li>
 									<li><a href="#">Link</a></li>
 
 									<!-- Dropdown level 2 -->

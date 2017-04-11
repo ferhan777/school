@@ -11,6 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  		parent::__construct();
  		$this->auth();
  		$this->load->model('user_model');
+    $this->load->library('grocery_CRUD');
  	}
 
    function auth(){ //this function prevent direct access to admin controller
@@ -88,6 +89,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }//form validation success block
 
  	}//closing of the function
+
+  function view_staff(){
+   $crud = new grocery_CRUD();
+   $crud ->set_table('staff');
+   $crud->unset_add();
+   $crud->unset_edit();
+   $crud->unset_delete();
+   $output = $crud -> render();
+   //$this->_example_output($output);
+   $this->load->view('admin/admin_header');
+   $this->load->view('admin/mini_head');
+   $this->load->view('admin/view_staff.php',(array)$output);
+   $this->load->view('admin/admin_footer'); 
+   }//closing of view_staff
+
+
+  
 
   
  }//class ends here

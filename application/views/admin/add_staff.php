@@ -67,17 +67,19 @@
     <button id="button2id" name="button2id" type="reset" class="btn btn-danger">Reset</button>
   </div>
 </div>
-<!-- <div class="form-group">
+<!--
+<div class="form-group">
   <label class="col-md-4 control-label" for="passwordinput"></label>
   <div class="col-md-2">
-    <input type="submit" class="form-control input-md" class="btn btn-success">
+     <input type="submit" class="form-control input-md" class="btn btn-success"> 
 
-   
+  
   </div>
   <div class="col-md-2">
     <input type="reset" class="form-control input-md" value="Reset">
   </div>
-</div> -->
+</div>
+-->
 
 </fieldset>
 </form>
