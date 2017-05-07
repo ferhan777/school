@@ -70,7 +70,7 @@
 								<ul class="nav navbar-nav">
 									<li><a href="<?=base_url()?>admin/admission">Admission</a></li>
 									<li><a href="<?=base_url()?>admin/view_staff">Staffs</a></li>
-									<li><a href="#">Link</a></li>
+									<li><a href="<?=base_url();?>admin/assign_duty">Assign Duty</a></li>
 
 									<!-- Dropdown level 2 -->
 									<li class="panel panel-default" id="dropdown">
@@ -131,6 +131,11 @@
 	   	}
 	   }  
 	    
+	   //  if(isset($assign_duty)){
+	   // 	if($assign_duty==true){
+	   // 	 $this->load->view('admin/assign_duty');	
+	   // 	}
+	   // }
 	   ?>
 	</div>
 

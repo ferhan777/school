@@ -11,6 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  		parent::__construct();
  		$this->auth();
  		$this->load->model('user_model');
+    $this->load->model('admin_model');
     $this->load->library('grocery_CRUD');
  	}
 
@@ -31,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  	function admission(){
  	 $data['admission_form']=true;	
      $this->load->view('admin/admin_header'); //need to create a admin_model
-     $this->load->view('admin/dashboard',$data);
+     $this->load->view('admin/admission');
      $this->load->view('admin/admin_footer');
  	}
 
@@ -54,14 +55,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       if($_POST){
         $employ_code = $this->input->post('employ_code',true);
         $username = $this->input->post('username',true);
-        $password = sha1($this->input->post('password',true));
+        $password = $this->input->post('password',true);
         $user_type = $this->input->post('staff_type',true);
         $data=array(
           'username'=>$username,
           'password'=>$password,
           'user_type' => $user_type
         	 );
-        $insert_id=$this->user_model->create_user($data);
+        $insert_id=$this->admin_model->create_user($data);
         if($insert_id>0){
         $data=array(
          'employ_code' =>$employ_code,
@@ -69,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          'approved' =>0,
          'user_id' =>$insert_id
         	);
-        $final_id=$this->user_model->create_staff($data);
+        $final_id=$this->admin_model->create_staff($data);
         if($final_id>0){                                            /***if this second proce fail we need to del first***/
           $data['staff_ok']=true;	
           $this->load->view('admin/admin_header');
@@ -104,9 +105,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    $this->load->view('admin/admin_footer'); 
    }//closing of view_staff
 
+   function assign_duty(){
+   //$this->load->view('admin/admin_header');
+   //$this->load->view('admin/mini_head');
+   $this->load->view('admin/assign_duty');
+   //$this->load->view('admin/admin_footer'); 
+   
+   }
 
-  
 
-  
- }//class ends here
+}//class ends here
 ?>

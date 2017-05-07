@@ -13,8 +13,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
  	function login(){
     $data['error']=false;
-    $this->form_validation->set_rules('username','Username','trim|required|min_length[5]|max_length[8]');
-    $this->form_validation->set_rules('password','Password','trim|required|min_length[5]|max_length[8]');
+    $this->form_validation->set_rules('username','Username','trim|required|min_length[4]|max_length[8]');
+    $this->form_validation->set_rules('password','Password','trim|required|min_length[4]|max_length[8]');
     $this->form_validation->set_error_delimiters('<div class="vali_error">', '</div>'); 
    
    if($this->form_validation->run()==false){

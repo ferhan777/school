@@ -6,9 +6,9 @@
  {
  	
   function index(){
-   $this->load->view('admin/admin_header');	
-   $this->load->view('test');
-   $this->load->view('admin/admin_footer');	
+   $this->load->model('admin_model');
+   $staff=$this->admin_model->find_all_staff();
+   print_r($staff);
   }
  }
 ?>
