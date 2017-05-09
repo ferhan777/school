@@ -41,6 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     function update_profile(){
      $id=$this->session->userdata('id');
+
      $data['error']=false;
      $data['update_profile_form']=true;
      $data['row']=$this->teacher_model->getUser($id); 
@@ -62,6 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           'first_name' =>$first_name,
           'last_name' =>$last_name
          );
+         
          $this->teacher_model->update_profile($id,$detail);  
         }
       }

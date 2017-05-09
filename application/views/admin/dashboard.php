@@ -114,11 +114,6 @@
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. -->
 	   
 	   <?php
-	   if(isset($admission_form)){
-	   	if($admission_form==true){
-	   	 $this->load->view('admin/admission');	
-	   	}
-	   } 
 
 	   if(isset($add_staff_form)){
 	   	if($add_staff_form==true){
@@ -129,14 +124,8 @@
 	   	if($staff_ok==true){
 	   	 echo "<p>New staff added successfully</p>";	
 	   	}
-	   }  
-	    
-	   //  if(isset($assign_duty)){
-	   // 	if($assign_duty==true){
-	   // 	 $this->load->view('admin/assign_duty');	
-	   // 	}
-	   // }
-	   ?>
+	   }
+	    ?>
 	</div>
 
 </div>

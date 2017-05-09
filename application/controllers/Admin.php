@@ -29,15 +29,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      $this->load->view('templates/footer');
  	}
 
- 	function admission(){
- 	 $data['admission_form']=true;	
+ 	function admission(){ // function to add admissions
+ 	   if($this->form_validation->run()==false){
+
+      
      $this->load->view('admin/admin_header');
      $this->load->view('admin/mini_head'); 
      $this->load->view('admin/admission');
      $this->load->view('admin/admin_footer');
- 	}
+    }else{
+      if($_POST){
+       // all the fileds in the form  
+      }
+    }
+ 	}//closing of function
 
- 	function add_staff(){ //this is done via user_model
+ 	function add_staff(){ 
      $data['error']=false;
      $data['add_staff_form']=true;
      $this->form_validation->set_rules('employ_code','Employee code','trim|required|min_length[4]|max_length[8]');
@@ -92,7 +99,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
  	}//closing of the function
 
-  function view_staff(){
+  function view_staff(){ // function to view staf with GC and add disabled
    $crud = new grocery_CRUD();
    $crud ->set_table('staff');
    $crud->unset_add();
@@ -106,7 +113,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    $this->load->view('admin/admin_footer'); 
    }//closing of view_staff
 
-   function assign_duty(){
+   function assign_duty(){ //assign duty to teachers
    //$this->load->view('admin/admin_header');
    //$this->load->view('admin/mini_head');
    $this->load->view('admin/assign_duty');
@@ -115,7 +122,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    }
 
 
-   function view_admit(){
+   function view_admit(){ // GC view of admissions disabled adding with GC
     $crud = new grocery_CRUD();
     $crud -> set_table('admissions');
     $output=$crud->render();

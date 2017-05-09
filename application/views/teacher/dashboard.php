@@ -120,6 +120,11 @@
 	   	 $this->load->view('teacher/update_profile');	
 	   	}
 	   } 
+	    if(isset($update_profile)){
+	   	if($staff_ok==true){
+	   	 echo "<p>New staff added successfully</p>";	
+	   	}
+	   }
 	    
 	   ?>
 	</div>
