@@ -68,7 +68,7 @@
 						<div id="dropdown-lvl1" class="panel-collapse collapse">
 							<div class="panel-body">
 								<ul class="nav navbar-nav">
-									<li><a href="<?=base_url()?>admin/admission">Admission</a></li>
+									<li><a href="<?=base_url()?>admin/view_admit">Admission</a></li>
 									<li><a href="<?=base_url()?>admin/view_staff">Staffs</a></li>
 									<li><a href="<?=base_url();?>admin/assign_duty">Assign Duty</a></li>
 

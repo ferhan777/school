@@ -31,7 +31,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
  	function admission(){
  	 $data['admission_form']=true;	
-     $this->load->view('admin/admin_header'); //need to create a admin_model
+     $this->load->view('admin/admin_header');
+     $this->load->view('admin/mini_head'); 
      $this->load->view('admin/admission');
      $this->load->view('admin/admin_footer');
  	}
@@ -112,6 +113,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    //$this->load->view('admin/admin_footer'); 
    
    }
+
+
+   function view_admit(){
+    $crud = new grocery_CRUD();
+    $crud -> set_table('admissions');
+    $output=$crud->render();
+
+    $this->load->view('admin/admin_header');
+    $this->load->view('admin/mini_head');
+    $this->load->view('admin/view_admissions.php',(array)$output);
+    $this->load->view('admin/admin_footer'); 
+   }
+
+   
 
 
 }//class ends here
