@@ -113,13 +113,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    $this->load->view('admin/admin_footer'); 
    }//closing of view_staff
 
-   function assign_duty(){ //assign duty to teachers
-   //$this->load->view('admin/admin_header');
+   function assign_duty($param=null){ //assign duty to teachers
+   echo $param;
+    
+   $data['staffs'] = $this->admin_model->find_all_teachers(); 
+   $this->load->view('admin/admin_header');
    //$this->load->view('admin/mini_head');
-   $this->load->view('admin/assign_duty');
-   //$this->load->view('admin/admin_footer'); 
+   $this->load->view('admin/assign_duty',$data);
+   $this->load->view('admin/admin_footer'); 
    
    }
+
+
 
 
    function view_admit(){ // GC view of admissions disabled adding with GC

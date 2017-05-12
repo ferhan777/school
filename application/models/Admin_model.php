@@ -29,5 +29,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    $inser_id = $this->db->insert_id();	
   }
 
+  function find_all_teachers(){
+   $this->db->select('*')->from('staff');
+   $query = $this->db->get();
+   return $query->result();
+  }
+
 
  }//closing of the class

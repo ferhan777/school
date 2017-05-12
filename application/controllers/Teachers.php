@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     function auth(){ //this function prevent direct access to admin controller
      $user_type=$_SESSION['user_type'];
-     if($user_type !='pteacher'){
+     if($user_type !='pteacher' && $user_type !='gteacher'){
      redirect(base_url().'users/login');
       }
     }

@@ -10,5 +10,9 @@
    $staff=$this->admin_model->find_all_staff();
    print_r($staff);
   }
+
+  function tt($id){
+  	echo $id;
+  }
  }
 ?>

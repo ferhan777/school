@@ -42,6 +42,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
            redirect(base_url().'admin');
           }else if($user['user_type']=='pteacher'){
            redirect(base_url().'teachers'); 
+          }else if($user['user_type']=='gteacher'){
+           redirect(base_url().'teachers'); 
           }
         } 
       }else{//if post failes due to some reasons
